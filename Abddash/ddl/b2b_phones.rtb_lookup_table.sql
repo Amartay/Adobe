@@ -1,0 +1,31 @@
+CREATE TABLE spark_catalog.b2b_phones.rtb_lookup_table (
+  max_qtr_date STRING,
+  fiscal_wk_ending_date STRING,
+  fiscal_yr_and_wk_desc STRING,
+  fiscal_yr_and_wk_desc_actual STRING,
+  fiscal_yr_and_wk_desc_derived STRING,
+  week_no STRING,
+  wkname STRING,
+  fiscal_yr_and_wk_desc_lwk STRING,
+  fiscal_yr_and_wk_in_lqtr STRING,
+  fiscal_yr_and_wk_ly STRING,
+  fiscal_yr_and_wk_in_lylq STRING,
+  fiscal_wk_in_qtr STRING,
+  fiscal_yr_and_qtr_flag STRING,
+  fiscal_yr_and_qtr STRING,
+  fiscal_yr_and_qtr_desc STRING,
+  quarter_no STRING,
+  fiscal_yr_and_qtr_desc_lqtr STRING,
+  fiscal_yr_and_qtr_ly STRING,
+  fiscal_yr_and_qtr_lylq STRING,
+  fiscal_prv_wk_flag STRING,
+  fiscal_yr_and_wk_flag STRING,
+  week_select_flag INT,
+  fiscal_yr_and_wk STRING,
+  day_name STRING,
+  baked_weeks DOUBLE,
+  baked_weeks_new DOUBLE)
+USING parquet
+LOCATION 'abfs://or1-prod-data@azr6665prddpaasb2bdna.dfs.core.windows.net/user/hive/warehouse/b2bdna/b2b_phones.db/rtb_lookup_table'
+TBLPROPERTIES (
+  'bucketing_version' = '2')
